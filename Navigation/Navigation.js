@@ -6,6 +6,7 @@ import { NavigationContainer } from "@react-navigation/native";
 import HomeNavigator from "./HomeNavigator";
 import NuggetsNavigator from "./NuggetsNavigator";
 import NewNuggetScreen from "../Screens/NewNuggetScreen";
+import HabitsNavigator from "./HabitsNavigator";
 
 const Tab = createBottomTabNavigator();
 
@@ -40,6 +41,19 @@ const Navigator = () => (
         tabBarIcon: ({ color, size }) => (
           <MaterialCommunityIcons
             name="folder-multiple"
+            color={color}
+            size={size}
+          />
+        ),
+      }}
+    />
+    <Tab.Screen
+      name="Habits"
+      component={HabitsNavigator}
+      options={{
+        tabBarIcon: ({ color, size }) => (
+          <MaterialCommunityIcons
+            name="clock-time-eight"
             color={color}
             size={size}
           />
