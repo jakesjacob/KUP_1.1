@@ -7,11 +7,17 @@ import HomeNavigator from "./HomeNavigator";
 import NuggetsNavigator from "./NuggetsNavigator";
 import NewNuggetScreen from "../screens/NewNuggetScreen";
 import HabitsNavigator from "./HabitsNavigator";
+import colors from "../config/colors";
 
 const Tab = createBottomTabNavigator();
 
 const Navigator = () => (
-  <Tab.Navigator>
+  <Tab.Navigator
+    tabBarOptions={{
+      inactiveTintColor: colors.KUPgreen,
+      activeTintColor: colors.KUPblue,
+    }}
+  >
     <Tab.Screen
       name="Home"
       component={HomeNavigator}
@@ -35,7 +41,7 @@ const Navigator = () => (
       }}
     />
     <Tab.Screen
-      name="My Nuggets"
+      name="Nuggets"
       component={NuggetsNavigator}
       options={{
         tabBarIcon: ({ color, size }) => (
