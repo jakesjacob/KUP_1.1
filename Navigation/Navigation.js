@@ -1,20 +1,56 @@
 import React from "react";
+import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
+import { MaterialCommunityIcons } from "@expo/vector-icons";
 import { NavigationContainer } from "@react-navigation/native";
-import { createStackNavigator } from "@react-navigation/stack";
-import { HomeScreen } from "../Screens/HomeScreen";
-import { DetailsScreen } from "../Screens/DetailsScreen";
 
-const { Navigator, Screen } = createStackNavigator();
+import HomeNavigator from "./HomeNavigator";
+import NuggetsNavigator from "./NuggetsNavigator";
+import NewNuggetScreen from "../Screens/NewNuggetScreen";
 
-const HomeNavigator = () => (
-  <Navigator headerMode="none">
-    <Screen name="Home" component={HomeScreen} />
-    <Screen name="Details" component={DetailsScreen} />
-  </Navigator>
+const Tab = createBottomTabNavigator();
+
+const Navigator = () => (
+  <Tab.Navigator>
+    <Tab.Screen
+      name="Home"
+      component={HomeNavigator}
+      options={{
+        tabBarIcon: ({ color, size }) => (
+          <MaterialCommunityIcons name="home" color={color} size={size} />
+        ),
+      }}
+    />
+    <Tab.Screen
+      name="New Nugget"
+      component={NewNuggetScreen}
+      options={{
+        tabBarIcon: ({ color, size }) => (
+          <MaterialCommunityIcons
+            name="folder-plus"
+            color={color}
+            size={size}
+          />
+        ),
+      }}
+    />
+    <Tab.Screen
+      name="My Nuggets"
+      component={NuggetsNavigator}
+      options={{
+        tabBarIcon: ({ color, size }) => (
+          <MaterialCommunityIcons
+            name="folder-multiple"
+            color={color}
+            size={size}
+          />
+        ),
+      }}
+    />
+  </Tab.Navigator>
 );
 
-export const AppNavigator = () => (
+export const Navigation = () => (
   <NavigationContainer>
-    <HomeNavigator />
+    <Navigator />
   </NavigationContainer>
 );
