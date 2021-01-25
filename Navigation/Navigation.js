@@ -5,7 +5,7 @@ import { NavigationContainer } from "@react-navigation/native";
 
 import HomeNavigator from "./HomeNavigator";
 import NuggetsNavigator from "./NuggetsNavigator";
-import NewNuggetScreen from "../Screens/NewNuggetScreen";
+import NewNuggetScreen from "../screens/NewNuggetScreen";
 import HabitsNavigator from "./HabitsNavigator";
 
 const Tab = createBottomTabNavigator();
