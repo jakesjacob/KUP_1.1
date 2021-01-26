@@ -1,8 +1,16 @@
+import { Text } from "@ui-kitten/components";
 import React from "react";
-import { View, StyleSheet } from "react-native";
+import { StyleSheet } from "react-native";
+import Screen from "../components/Screen";
 
-function MyNuggetsScreen(props) {
-  return <View style={styles.container}></View>;
+function MyNuggetsScreen({ route }) {
+  const listing = route.params;
+
+  return (
+    <Screen>
+      <Text>{listing.title}</Text>
+    </Screen>
+  );
 }
 
 const styles = StyleSheet.create({
