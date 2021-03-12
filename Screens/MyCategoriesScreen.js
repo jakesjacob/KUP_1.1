@@ -36,16 +36,31 @@ function MyCategoriesScreen({ navigation }) {
       onPress={() => navigation.navigate(routes.MY_FOLDERS, item)}
     />
   );
+  const newCategory = (props) => (
+    <MaterialCommunityIcons
+      name="folder-plus"
+      color={colors.KUPgreen}
+      size={30}
+    />
+  );
 
   return (
-    <Screen>
-      <List style={styles.container} data={data} renderItem={renderItems} />
+    <Screen style={styles.container}>
+      <Button style={styles.button} size="small" accessoryRight={newCategory}>
+        NEW CATEGORY
+      </Button>
+      <List data={data} renderItem={renderItems} />
     </Screen>
   );
 }
 
 const styles = StyleSheet.create({
   container: {},
+  button: {
+    width: "40%",
+    alignSelf: "center",
+    margin: 5,
+  },
 });
 
 export default MyCategoriesScreen;
