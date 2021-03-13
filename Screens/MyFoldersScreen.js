@@ -9,7 +9,7 @@ import colors from "../config/colors";
 
 const data = new Array(20).fill({
   title: "Folder Title",
-  description: "Subtitle for Folder",
+  description: "Folder Subtitle",
 });
 
 function MyFoldersScreen({ navigation, route }) {
