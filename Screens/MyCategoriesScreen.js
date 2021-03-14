@@ -9,7 +9,7 @@ import colors from "../config/colors";
 
 const data = new Array(8).fill({
   title: "Category Title",
-  description: "Subtitle for Category",
+  description: "Category Subtitle",
 });
 
 function MyCategoriesScreen({ navigation }) {
